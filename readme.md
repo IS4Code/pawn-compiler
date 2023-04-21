@@ -21,7 +21,7 @@ This project exists to:
 - Fix known bugs with the original compiler
 - Provide a better development experience for the SA:MP community
 
-If you find problem, you can [open an issue][issues] and contributors can work
+If you find a problem, you can [open an issue][issues] and contributors can work
 on a fix. This isn't true with the original compiler that comes with the SA:MP
 server distribution.
 
@@ -62,28 +62,36 @@ Download the ZIP archive and extract `pawnc.dll`, `pawncc.exe`,
 `pawndisasmsm.exe` to your original `pawncc` directory. If you use Pawno, this
 will be in the `pawno/` folder that's inside your server directory.
 
-### openSUSE/SLES
+### openSUSE
 
-There is an installation package available for openSUSE/SLES users so that you
-can easily install the compiler on your distribution. Please follow these steps:
+There is an installation package available for openSUSE users so that you
+can easily install the latest compiler on your distribution. Please follow
+these steps:
 
-1.  Go to <https://build.opensuse.org/package/show/home:mschnitzer/pawncc>
+1.  Go to https://build.opensuse.org/package/show/home:mschnitzer:pawncc/pawncc
 2.  On the right side, select your distribution (only if it's not disabled!)
 3.  Click "Go to download repository"
 4.  Copy the link and enter in sudo mode in your shell:
-    `zypper ar $COPIED_LINK home:mschnitzer`
+    `zypper ar $COPIED_LINK home:mschnitzer:pawncc`
 5.  Again as root, type: `zypper ref`
 6.  Install the package with `zypper in pawncc`
 7.  Run `pawncc` in your shell to test if it's working
+
+The download repository for openSUSE does provide older versions as well (oldest
+version: 3.10.7). Just install the version you like (e.g.:
+`zypper in pawncc-3.10.8` and run it via `$ pawncc-3.10.8 -Z -O3 [...]`).
+Parallel installation is supported.
 
 ### With sampctl
 
 If you are a [sampctl][sampctl] user, you are already using this compiler!
 
-### Build From Source
+### Building from Source
 
-If you are interested in contributing or just using a specific version, check
-out [this page][build_source] for instructions for compiling for your platform.
+If you are interested in contributing then please first read
+[this document][contributing] and ensure you have discussed your proposed
+changes before writing any code. Check out [this page][build_source] for
+instructions for compiling for your platform.
 
 ## Background
 
@@ -116,4 +124,6 @@ seems to be based on an older release of Pawn.
   https://ci.appveyor.com/project/Southclaws/compiler/branch/master/artifacts
 [compat]: https://github.com/pawn-lang/compiler/wiki/Compatibility-mode
 [sampctl]: http://bit.ly/sampctl
+[contributing]:
+  https://github.com/pawn-lang/compiler/tree/master/.github/CONTRIBUTING.md
 [build_source]: https://github.com/pawn-lang/compiler/wiki/Building-From-Source
